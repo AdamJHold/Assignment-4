@@ -48,7 +48,12 @@ public class LoginConsole {
 							System.out.println("Please enter username of alternate user");
 						    String changeUser = askChangeUser();
 						    User altUser = userService.selectAltUser(changeUser);
-						      personLoggingIn = altUser;					   
+						       if (altUser == null) {
+						    	System.out.println("Invalid entry, please try again");
+						    	System.out.println("    ");
+						    } else {
+						      personLoggingIn = altUser;
+						    }					   
 						}
 						if (choice == 1) {
 							System.out.println("Enter new Username: ");
