@@ -39,7 +39,7 @@ public class User implements Comparable<User> {
 	public int compareTo(User that) {
 		int sort = that.getRole().compareTo(this.getRole());
 		if (sort == 0) {
-			sort = this.getUsername().compareTo(that.getUsername());
+			sort = this.getUsername().compareToIgnoreCase(that.getUsername());
 	} return sort;
 	}
 }
